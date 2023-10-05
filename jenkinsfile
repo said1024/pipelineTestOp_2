@@ -1,0 +1,24 @@
+pipeline {
+    agent any 
+    stages {
+        stage('clonings') { 
+            steps {
+               echo "cloning"
+               git branch: 'main', credentialsId: 'optidial_1', url: 'https://github.com/Oualitsen/optidial.git'
+            }
+        }
+ stage('maven build') { 
+            steps {
+               echo "build"
+                sh "mvn clean package"
+            }
+        }
+ stage('Test') {
+            steps {
+                echo "unit tests"
+                sh "mvn test"
+            }
+        }
+
+    }
+}
