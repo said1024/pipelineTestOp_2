@@ -22,7 +22,7 @@ pipeline {
 stage('deploy') {
             steps {
                 echo "deploy"
-                sh "java -jar $WORKSPACE'/target/jenkins_test-0.0.1-SNAPSHOT.jar'"
+                sh "java -jar $WORKSPACE'/target/optidial-0.0.1-SNAPSHOT.jar'"
             }
         }
  
